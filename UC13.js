@@ -1,4 +1,4 @@
-function Cube(length,mass,volume,density,surfaceArea){
+/* function Cube(length,mass,volume,density,surfaceArea){
   this.lenghth = length;
   this.mass = mass;
   this.volume = volume;
@@ -7,11 +7,17 @@ function Cube(length,mass,volume,density,surfaceArea){
 }
 
 var Cube = new Cube()
+*/
 
-function Pet(type, name, age) {
+function Pet(type, name) {
     this.type = type;
     this.name = name;
-    this.age = age;
+    this.hunger = 0;
+    this.sleepy = 0;
+    this.nap = 0;
+    this.fetch = 0;
+    this.shake = 0;
+
     this.speak = function() {
         if (this.type === "Dog") {
             return "Ruff!";
@@ -23,19 +29,6 @@ function Pet(type, name, age) {
     }
 }
 
- var Pet1 = {
-    type: "Dog",
-    name: "Spot",
-    age: 2,
-    hairColor: "brown"
-};
-
- var Pet2 = {
-    type: "Cat",
-    name: "Whiskers",
-    age: 4,
-    hairColor: "orange"
-};
-
-var pet1 = new Pet("Dog", "Spot", 2);
-var pet2 = new Pet("Cat", "Whiskers", 4);
+ v
+var pet1 = new Pet("Dog", "Buzz");
+var pet2 = new Pet("Cat", "Whiskey");
