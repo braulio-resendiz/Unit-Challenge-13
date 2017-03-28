@@ -8,21 +8,22 @@
 
 var Cube = new Cube()
 */
-function Pet(type) {
+function Pet(name, type) {
     this.type = type;
+    this.name = name;
     this.sleepy = 0;
     this.hunger = 0;
     this.awake = true
-    this.speak = function () {
+    this.speak = function() {
             if (this.type == "Dog") {
-                return "Woof! That means I love you!";
                 this.hunger++;
                 this.sleepy++;
+                return "Woof! That means I love you!";
             }
             else if (this.type == "Cat") {
-                return "Ugh. meow.";
                 this.hunger++;
                 this.sleepy++;
+                return "Ugh. meow.";
             }
         }
         /* this.shake = function () {
