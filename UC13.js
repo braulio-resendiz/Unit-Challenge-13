@@ -26,6 +26,18 @@ function Pet(name, type) {
                 return "Ugh. meow.";
             }
         }
+    this.eat = function() {
+            if (this.type == "Dog") {
+                this.hunger = 0;
+                this.sleepy++;
+                return "Nom nom nom nom. Yum, thank you for this delicious food! I love you!";
+            }
+            else if (this.type == "Cat") {
+                this.hunger = 0;
+                this.sleepy++;
+                return "Ugh, I guess I'll eat this.";
+            }
+        }
         /* this.shake = function () {
              if (this.type === "Dog") {
                  return "Ruff!";
@@ -37,11 +49,5 @@ function Pet(name, type) {
                  return "";
              }
          }
-         this.nap = function () {
-             if (this.awake == "true") {
-                 return "zzz";
-             }
-         }
-         this.nap = 0;
-         this.fetch = 0; */
+         */
 }
