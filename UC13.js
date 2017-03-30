@@ -66,20 +66,31 @@ function Pet(name, type) {
         }
     }
     this.rollOver = function () {
+        if (this.type == "Dog" && this.hunger < 5 && this.awake < 4) {
+            this.sleepy++;
+            this.hunger++;
+            return "Rolling! Now what? I love you!";
+
+        }else if (this.type == "Dog" && this.hunger > 5) {
+                return "I'm hungry! Let's eat first. I love you!";
+            }
+            else if (this.type == "Dog" && this.sleepy > 5) {
+                return "Yawn. Let's play after a nap. I love you!"
+            }
+
         if (this.type == "Cat" && this.hunger < 5 && this.awake < 4) {
             this.sleepy++;
             this.hunger++;
             return "Ugh. I'm a cat. I only roll over if I want to.";
         }
-        else if (this.type == "Dog" && this.hunger < 5 && this.awake < 4) {
-            this.sleepy++;
-            this.hunger++;
-            return "Rolling! Now what? I love you!";
+            else if (this.type == "Cat" && this.hunger > 5) {
+                return "Ugh. Feed me before I'll even think about it.";
+            }
+            else if (this.type == "Cat" && this.sleepy > 5) {
+                return "Ugh. I need a 12 hour nap first."
+            }
         }
-        else if (this.type == "Dog" && this.hunger > 5 && this.awake > 4) {
-            return "Zzzz...";
-        }
-    }
+
     this.fetch = function () {
         if (this.type == "Cat" && this.hunger < 4 && this.awake < 5) {
             return "Ugh. I'm a cat. I don't fetch.";
@@ -87,10 +98,10 @@ function Pet(name, type) {
         else if (this.type == "Dog" && this.hunger < 5 && this.awake < 4) {
             return "Must get the stick! I love you!";
         }
-        else if (this.type == "Dog"  && this.awake >= 4) {
+        else if (this.type == "Dog" && this.awake >= 4) {
             return "Yawn. Let's play after a nap. I love you!";
         }
-          else if (this.type == "Dog" && this.hunger >= 5 ) {
+        else if (this.type == "Dog" && this.hunger >= 5) {
             return "I'm hungry! Let's eat first. I love you!";
         }
         else if (this.type == "Cat" && this.hunger > 5 && this.awake > 4) {
