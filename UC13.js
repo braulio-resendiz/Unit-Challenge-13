@@ -14,40 +14,87 @@ function Pet(name, type) {
     this.sleepy = 0;
     this.hunger = 0;
     this.awake = true
-    this.speak = function() {
-            if (this.type == "Dog") {
-                this.hunger++;
-                this.sleepy++;
-                return "Woof! That means I love you!";
-            }
-            else if (this.type == "Cat") {
-                this.hunger++;
-                this.sleepy++;
-                return "Ugh. meow.";
-            }
+    this.speak = function () {
+        if (this.type == "Dog") {
+            this.hunger++;
+            this.sleepy++;
+            return "Woof! That means I love you!";
         }
-    this.eat = function() {
-            if (this.type == "Dog") {
-                this.hunger = 0;
-                this.sleepy++;
-                return "Nom nom nom nom. Yum, thank you for this delicious food! I love you!";
-            }
-            else if (this.type == "Cat") {
-                this.hunger = 0;
-                this.sleepy++;
-                return "Ugh, I guess I'll eat this.";
-            }
+        else if (this.type == "Cat") {
+            this.hunger++;
+            this.sleepy++;
+            return "Ugh. meow.";
         }
-        /* this.shake = function () {
-             if (this.type === "Dog") {
-                 return "Ruff!";
-             }
-             else if (this.type === "Cat") {
-                 return "Meow!";
-             }
-             else {
-                 return "";
-             }
-         }
-         */
+    }
+    this.eat = function () {
+        if (this.type == "Dog") {
+            this.hunger = 0;
+            this.sleepy++;
+            return "Nom nom nom nom. Yum, thank you for this delicious food! I love you!";
+        }
+        else if (this.type == "Cat") {
+            this.hunger = 0;
+            this.sleepy++;
+            return "Ugh, I guess I'll eat this.";
+        }
+    }
+    this.nap = function () {
+        if (this.awake == true) {
+            this.sleepy = 0;
+            this.awake = false;
+            return "Zzzz...";
+        }
+        else if (this.awake == false) {
+            return "Zzzz...";
+        }
+    }
+    this.wakeUp = function () {
+        if (this.type == "Cat" && this.awake == true) {
+            this.sleepy = 0;
+            this.hunger = 4;
+            this.awake = false;
+            return "Ugh, I'm awake now. Is there anything to eat around here?";
+        }
+        else if (this.type == "Dog" && this.awake == true) {
+            this.sleepy = 0;
+            this.hunger = 4;
+            this.awake = false;
+            return "I'm awake! Let's eat and then play! I love you!";
+        }
+        else if (this.awake == false) {
+            return "Zzzz...";
+        }
+    }
+    this.rollOver = function () {
+        if (this.type == "Cat" && this.hunger < 5 && this.awake < 4) {
+            this.sleepy++;
+            this.hunger++;
+            return "Ugh. I'm a cat. I only roll over if I want to.";
+        }
+        else if (this.type == "Dog" && this.hunger < 5 && this.awake < 4) {
+            this.sleepy++;
+            this.hunger++;
+            return "Rolling! Now what? I love you!";
+        }
+        else if (this.type == "Dog" && this.hunger > 5 && this.awake > 4) {
+            return "Zzzz...";
+        }
+    }
+    this.fetch = function () {
+        if (this.type == "Cat" && this.hunger < 4 && this.awake < 5) {
+            return "Ugh. I'm a cat. I don't fetch.";
+        }
+        else if (this.type == "Dog" && this.hunger < 5 && this.awake < 4) {
+            return "Must get the stick! I love you!";
+        }
+        else if (this.type == "Dog"  && this.awake >= 4) {
+            return "Yawn. Let's play after a nap. I love you!";
+        }
+          else if (this.type == "Dog" && this.hunger >= 5 ) {
+            return "I'm hungry! Let's eat first. I love you!";
+        }
+        else if (this.type == "Cat" && this.hunger > 5 && this.awake > 4) {
+            return "Ugh. I need a 12 hour nap first.";
+        }
+    }
 }
