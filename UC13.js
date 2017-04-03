@@ -92,10 +92,10 @@ function Pet(name, type) {
         }
 
     this.fetch = function () {
-        if (this.type == "Cat" && this.hunger < 4 && this.awake < 5) {
+        if (this.type == "Cat" && this.hunger <= 4 && this.awake <= 5) {
             return "Ugh. I'm a cat. I don't fetch.";
         }
-        else if (this.type == "Dog" && this.hunger < 5 && this.awake < 4) {
+        else if (this.type == "Dog" && this.hunger <= 5 && this.awake <= 4) {
             return "Must get the stick! I love you!";
         }
         else if (this.type == "Dog" && this.awake >= 4) {
