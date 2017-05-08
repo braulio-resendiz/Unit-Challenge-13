@@ -66,46 +66,59 @@ function Pet(name, type) {
         }
     }
     this.rollOver = function () {
-        if (this.type == "Dog" && this.hunger < 5 && this.awake < 4) {
             this.sleepy++;
             this.hunger++;
+        if (this.type == "Dog" && this.hunger < 4 && this.sleepy < 5 && this.awake == true) {
             return "Rolling! Now what? I love you!";
 
-        }else if (this.type == "Dog" && this.hunger > 5) {
+        }else if (this.type == "Dog" && this.hunger >= 5 && this.awake == true) {
                 return "I'm hungry! Let's eat first. I love you!";
             }
-            else if (this.type == "Dog" && this.sleepy > 5) {
+            else if (this.type == "Dog" && this.sleepy >= 5 && this.awake == true) {
                 return "Yawn. Let's play after a nap. I love you!"
             }
 
-        if (this.type == "Cat" && this.hunger < 5 && this.awake < 4) {
-            this.sleepy++;
-            this.hunger++;
+         if (this.type == "Cat" && this.hunger < 5 && this.sleepy < 5 && this.awake == true) {
+
             return "Ugh. I'm a cat. I only roll over if I want to.";
         }
-            else if (this.type == "Cat" && this.hunger > 5) {
+            else if (this.type == "Cat" && this.hunger >= 5 && this.awake == true) {
                 return "Ugh. Feed me before I'll even think about it.";
             }
-            else if (this.type == "Cat" && this.sleepy > 5) {
+            else if (this.type == "Cat" && this.sleepy >= 5 && this.awake == true) {
                 return "Ugh. I need a 12 hour nap first."
             }
+            else if   (this.awake == false){
+                return "Zzzz..."
+            }
+
         }
 
     this.fetch = function () {
-        if (this.type == "Cat" && this.hunger <= 4 && this.awake <= 5) {
+     if (this.type == "Dog" && this.hunger < 4 && this.sleepy < 5 && this.awake == true) {
+            return "Rolling! Now what? I love you!";
+
+        }
+        else if (this.type == "Dog" && this.hunger >= 5 && this.awake == true) {
+                return "I'm hungry! Let's eat first. I love you!";
+            }
+            else if (this.type == "Dog" && this.sleepy >= 5 && this.awake == true) {
+                return "Yawn. Let's play after a nap. I love you!"
+            }
+
+         if (this.type == "Cat" && this.hunger < 5 && this.sleepy < 5 && this.awake == true) {
+
             return "Ugh. I'm a cat. I don't fetch.";
         }
-        else if (this.type == "Dog" && this.hunger <= 5 && this.awake <= 4) {
-            return "Must get the stick! I love you!";
+            else if (this.type == "Cat" && this.hunger >= 5 && this.awake == true) {
+                return "Ugh. Feed me before I'll even think about it.";
+            }
+            else if (this.type == "Cat" && this.sleepy >= 5 && this.awake == true) {
+                return "Ugh. I need a 12 hour nap first."
+            }
+            else if   (this.awake == false){
+                return "Zzzz..."
+            }
+
         }
-        else if (this.type == "Dog" && this.awake >= 4) {
-            return "Yawn. Let's play after a nap. I love you!";
-        }
-        else if (this.type == "Dog" && this.hunger >= 5) {
-            return "I'm hungry! Let's eat first. I love you!";
-        }
-        else if (this.type == "Cat" && this.hunger > 5 && this.awake > 4) {
-            return "Ugh. I need a 12 hour nap first.";
-        }
-    }
 }

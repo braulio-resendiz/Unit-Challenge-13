@@ -51,7 +51,7 @@ QUnit.test("Test the roll over behavior.", function (assert) {
     myPet.hunger = 0;
     myPet.sleepy = 0;
     myPet.awake = false;
-    result = myPet.shake();
+    result = myPet.rollOver();
     assert.deepEqual(result, "Zzzz...", "Success - a dog won't roll over if it's sleeping" );
     myPet = new Pet("test", "Cat");
     var result = myPet.rollOver();
@@ -68,7 +68,7 @@ QUnit.test("Test the roll over behavior.", function (assert) {
     myPet.hunger = 0;
     myPet.sleepy = 0;
     myPet.awake = false;
-    result = myPet.shake();
+    result = myPet.rollOver();
     assert.deepEqual(result, "Zzzz...", "Success - a cat won't roll over if it's sleeping" );
 });
 
@@ -88,7 +88,7 @@ QUnit.test("Test the fetch behavior.", function (assert) {
     myPet.hunger = 0;
     myPet.sleepy = 0;
     myPet.awake = false;
-    result = myPet.shake();
+    result = myPet.fetch();
     assert.deepEqual(result, "Zzzz...", "Success - a dog won't fetch if it's sleeping" );
     myPet = new Pet("test", "Cat");
     var result = myPet.fetch();
@@ -105,7 +105,7 @@ QUnit.test("Test the fetch behavior.", function (assert) {
     myPet.hunger = 0;
     myPet.sleepy = 0;
     myPet.awake = false;
-    result = myPet.shake();
+    result = myPet.fetch();
     assert.deepEqual(result, "Zzzz...", "Success - a cat won't fetch if it's sleeping" );
 });
 
